@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-08",
+  "repository_visibility": "public",
+  "ios": {
+    "signing_secrets_configured": true,
+    "enable_native_ci": true,
+    "run_id": 42431167633,
+    "run_url": "https://github.com/gianpaolobol/random-stranger/actions/runs/42431167633",
+    "source_commit": "aa708f051776b45e46f099be2bb5fbfcdcabd547",
+    "platform": "ios",
+    "upload_testflight": true,
+    "status": "in_progress",
+    "testflight_available": false
+  },
+  "android": {
+    "play_app_id": "4973696627498088796",
+    "package": "it.randomstranger.app",
+    "version": "0.1.0",
+    "version_code": 2,
+    "release_id": 1,
+    "track_id": "4701512455309823023",
+    "status": "released_to_internal_testing",
+    "testers_configured": false,
+    "public_production": false,
+    "aab_sha256": "941f58264b9ff64e7f363b1311087676a2eb8db882d4d037704d608d80dfa5bd"
+  },
+  "credentials": {
+    "stored": "GitHub Actions Secrets only; no plaintext in source or logs",
+    "temporary_transfer_file_removed": true
+  }
+}
