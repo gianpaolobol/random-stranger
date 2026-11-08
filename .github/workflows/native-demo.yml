@@ -43,6 +43,7 @@ jobs:
       - run: npm test
       - run: npm run typecheck
       - run: npm run check:store
+      - run: npm run verify:native
   android:
     needs: checks
     if: github.event_name == 'push' || inputs.platform == 'both' || inputs.platform == 'android'

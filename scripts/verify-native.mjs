@@ -18,9 +18,8 @@ try{
  if(demoOnly?entitlements.includes('com.apple.developer.applesignin'):!entitlements.includes('com.apple.developer.applesignin'))throw Error('Entitlement Apple mancante.');
  const plist=await readFile(join(temp,'ios/RandomStranger/Info.plist'),'utf8');
  for(const name of ['NSLocationAlwaysAndWhenInUseUsageDescription','NSLocationAlwaysUsageDescription','NSMotionUsageDescription','NSFaceIDUsageDescription'])if(plist.includes('<key>'+name+'</key>'))throw Error('Uso iOS non previsto: '+name);
- if(demoOnly&&(plist.includes('<key>NSContactsUsageDescription</key>')||plist.includes('<key>NSLocationWhenInUseUsageDescription</key>')))throw Error('La demo non deve chiedere contatti o posizione reali.');
- if(!demoOnly&&!plist.includes('NSContactsUsageDescription'))throw Error('Descrizione permesso rubrica iOS mancante.');
- const report={mode:demoOnly?'demo':'real',checkedAt:new Date().toISOString(),androidPrebuild:'passed',iosPrebuild:'passed',appleEntitlement:demoOnly?'not-requested':'present',unneededPermissions:'removed',contactAccess:demoOnly?'not-requested':'read-only,on-demand,names-only',nativeCompilation:'not-run',signedBinaries:false,deviceTests:'not-run',notes:['expo-system-ui non installato: la palette dell’app è applicata direttamente dai componenti.']};
+ for(const key of ['NSContactsUsageDescription','NSLocationWhenInUseUsageDescription'])if(!new RegExp('<key>'+key+'</key>\\s*<string>[^<]+</string>').test(plist))throw Error('Purpose string iOS mancante: '+key);
+ const report={mode:demoOnly?'demo':'real',checkedAt:new Date().toISOString(),androidPrebuild:'passed',iosPrebuild:'passed',appleEntitlement:demoOnly?'not-requested':'present',unneededPermissions:'removed',purposeStrings:'contacts-and-location-present-for-linked-SDKs',contactAccess:demoOnly?'not-requested':'read-only,on-demand,names-only',nativeCompilation:'not-run',signedBinaries:false,deviceTests:'not-run',notes:['expo-system-ui non installato: la palette dell’app è applicata direttamente dai componenti.']};
  await writeFile(join(root,demoOnly?'docs/NATIVE_DEMO_VERIFICATION.json':'docs/NATIVE_VERIFICATION.json'),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify(report));
 }finally{await rm(temp,{recursive:true,force:true});}
