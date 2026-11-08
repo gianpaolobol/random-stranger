@@ -8,6 +8,7 @@ env:
   EXPO_NO_TELEMETRY: '1'
   EXPO_PUBLIC_DEMO_ONLY: 'true'
   EAS_BUILD_PROFILE: demo
+  EXPO_USE_PRECOMPILED_MODULES: '0'
 jobs:
   startup:
     runs-on: macos-latest
