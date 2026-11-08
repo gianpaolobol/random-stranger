@@ -1,0 +1,17 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {createStore} from '../server/store.mjs';import {profile} from './helpers.mjs';
+const now=Date.parse('2026-11-07T18:00:00Z');
+test('profili non verificati non sono mostrati o abbinati e revisioni diverse richiedono nuovo controllo',()=>{
+ const s=createStore(':memory:',()=>now,{reviewRequired:true});
+ try{const a=s.upsertIdentity('google','a','a@example.invalid',''),b=s.upsertIdentity('google','b','b@example.invalid','');s.saveProfile(a.id,profile());s.saveProfile(b.id,profile({gender:'uomo',wantedGenders:['donna']}));assert.equal(s.profileReview(a.id),'pending');assert.equal(s.findMatch(a.id),null);const pending=s.pendingProfiles();assert.equal(pending.length,2);for(const p of pending)s.reviewProfile(p.userId,true,p.contentHash);const meeting=s.findMatch(a.id);assert.ok(meeting);assert.equal(meeting.partner.description,profile().description);s.saveProfile(b.id,profile({gender:'uomo',wantedGenders:['donna'],description:'Una descrizione modificata ancora da verificare.'}));assert.equal(s.profileReview(b.id),'pending');assert.equal(s.getAppointment(a.id,meeting.id).partner.description,profile().description);assert.throws(()=>s.reviewProfile(b.id,true,pending.find(p=>p.userId===b.id).contentHash));}finally{s.close();}
+});
+test('segnalazione contenuto è disponibile prima della conferma e non crea penalità',()=>{
+ const s=createStore(':memory:',()=>now,{reviewRequired:true});
+ try{const a=s.upsertIdentity('google','a','a@example.invalid',''),b=s.upsertIdentity('google','b','b@example.invalid','');s.saveProfile(a.id,profile());s.saveProfile(b.id,profile({gender:'uomo',wantedGenders:['donna']}));for(const p of s.pendingProfiles())s.reviewProfile(p.userId,true,p.contentHash);const meeting=s.findMatch(a.id);s.reportContent(a.id,meeting.id,'Descrizione offensiva');const report=s.pendingContentReports()[0];assert.equal(report.target,b.id);assert.equal(s.account(b.id).strikes,0);s.resolveContentReport(report.id,true);assert.equal(s.profileReview(b.id),'rejected');assert.equal(s.account(b.id).strikes,0);assert.equal(s.pendingContentReports().length,0);}finally{s.close();}
+});
+test('modifiche private alle preferenze non richiedono nuova approvazione',()=>{
+ const s=createStore(':memory:',()=>now,{reviewRequired:true});try{const u=s.upsertIdentity('google','a','a@example.invalid','');s.saveProfile(u.id,profile());const p=s.pendingProfiles()[0];s.reviewProfile(u.id,true,p.contentHash);s.saveProfile(u.id,profile({radiusKm:25,wantedBodies:['morbida']}));assert.equal(s.profileReview(u.id),'approved');assert.equal(s.pendingProfiles().length,0);}finally{s.close();}
+});
+test('terza penalità rimuove anche la copia approvata del profilo',()=>{
+ const s=createStore(':memory:',()=>now,{reviewRequired:true});try{const a=s.upsertIdentity('google','a','a@example.invalid',''),b=s.upsertIdentity('google','b','b@example.invalid','');s.saveProfile(a.id,profile());s.saveProfile(b.id,profile({gender:'uomo',wantedGenders:['donna']}));for(const p of s.pendingProfiles())s.reviewProfile(p.userId,true,p.contentHash);let meeting;for(let i=0;i<3;i++){meeting=s.findMatch(a.id);s.confirm(a.id,meeting.id);s.confirm(b.id,meeting.id);s.cancel(b.id,meeting.id,meeting.start-1);}assert.equal(s.account(b.id).status,'excluded');assert.equal(s.getProfile(b.id),null);assert.equal(s.getAppointment(a.id,meeting.id).partner.description,undefined);}finally{s.close();}
+});

@@ -1,0 +1,2 @@
+const now=Date.parse('2026-11-07T18:00:00Z');
+export const profile=(extra={})=>({adult:true,age:30,description:'Sono una persona curiosa, sportiva e diretta.',gender:'donna',trans:false,body:'atletica',orientation:'',interests:'',wantedGenders:['uomo'],wantedBodies:[],transPreference:'qualsiasi',minAge:18,maxAge:70,radiusKm:10,lat:44.4949,lon:11.3426,availability:[{start:now+7200000,end:now+14400000}],consent:true,...extra});

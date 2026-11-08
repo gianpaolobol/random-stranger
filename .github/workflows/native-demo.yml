@@ -1,0 +1,139 @@
+name: Demo native GitHub
+on:
+  push:
+    branches: [main]
+    paths: ['App.tsx', 'app.config.ts', 'index.ts', 'src/**', 'assets/**', 'plugins/**', 'scripts/ci/**', 'package*.json', '.github/workflows/native-demo.yml']
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Piattaforma
+        type: choice
+        options: [both, android, ios]
+        default: both
+      upload_testflight:
+        description: Carica la demo iOS su TestFlight dopo la compilazione
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: native-demo-${{ github.ref }}
+  cancel-in-progress: false
+# Set ENABLE_NATIVE_CI=true only after verifying included Actions quota and Secrets.
+# No Expo token, EAS Build or EAS Submit is used.
+env:
+  CI: '1'
+  EXPO_NO_TELEMETRY: '1'
+  EXPO_PUBLIC_DEMO_ONLY: 'true'
+  EAS_BUILD_PROFILE: demo
+jobs:
+  checks:
+    if: vars.ENABLE_NATIVE_CI == 'true' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.3.0'
+          package-manager-cache: false
+      - run: npm ci
+      - run: npm test
+      - run: npm run typecheck
+      - run: npm run check:store
+  android:
+    needs: checks
+    if: github.event_name == 'push' || inputs.platform == 'both' || inputs.platform == 'android'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+      ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+      ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.3.0'
+          package-manager-cache: false
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Prepare release
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${ANDROID_KEYSTORE_BASE64:?Missing keystore}"
+          node scripts/ci/build-number.mjs >> "$GITHUB_ENV"
+          echo "ANDROID_KEYSTORE_PATH=$RUNNER_TEMP/rs-upload.jks" >> "$GITHUB_ENV"
+          python3 -c 'import os,base64,pathlib;p=pathlib.Path(os.environ["RUNNER_TEMP"])/"rs-upload.jks";p.write_bytes(base64.b64decode(os.environ["ANDROID_KEYSTORE_BASE64"],validate=True));p.chmod(0o600)'
+      - run: npm ci
+      - run: npx --no-install expo prebuild --platform android --no-install
+      - run: node scripts/ci/configure-android.mjs
+      - name: Build signed AAB
+        working-directory: android
+        run: ./gradlew app:bundleRelease --no-daemon
+      - name: Verify signature
+        run: bash scripts/ci/verify-android-signature.sh
+      - uses: actions/upload-artifact@v7
+        with:
+          name: random-stranger-android-${{ github.run_number }}-${{ github.run_attempt }}
+          path: android/app/build/outputs/bundle/release/*.aab
+          if-no-files-found: error
+          retention-days: 3
+      - name: Remove signing key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/rs-upload.jks" "$RUNNER_TEMP/rs-expected.der" "$RUNNER_TEMP/rs-actual.der" "$RUNNER_TEMP/rs-signer.pem"
+  ios:
+    needs: checks
+    if: github.event_name == 'push' || inputs.platform == 'both' || inputs.platform == 'ios'
+    runs-on: macos-latest
+    timeout-minutes: 60
+    env:
+      APPLE_TEAM_ID: BX9MDXAHKG
+      APPLE_CERTIFICATE_P12_BASE64: ${{ secrets.APPLE_CERTIFICATE_P12_BASE64 }}
+      APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+      APPLE_PROFILE_BASE64: ${{ secrets.APPLE_PROFILE_BASE64 }}
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.3.0'
+          package-manager-cache: false
+      - name: Prepare release
+        run: |
+          node scripts/ci/build-number.mjs >> "$GITHUB_ENV"
+          bash scripts/ci/prepare-ios-signing.sh
+      - run: npm ci
+      - run: npx --no-install expo prebuild --platform ios --no-install
+      - run: pod install --project-directory=ios
+      - run: gem install xcodeproj -v 1.27.0 --user-install --no-document
+      - run: ruby scripts/ci/configure-ios.rb
+      - name: Archive app
+        run: xcodebuild -workspace ios/RandomStranger.xcworkspace -scheme RandomStranger -configuration Release -destination 'generic/platform=iOS' -archivePath build/ios/RandomStranger.xcarchive archive
+      - name: Export signed IPA
+        run: xcodebuild -exportArchive -archivePath build/ios/RandomStranger.xcarchive -exportPath build/ios/export -exportOptionsPlist "$RUNNER_TEMP/rs-signing/ExportOptions.plist"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: random-stranger-ios-${{ github.run_number }}-${{ github.run_attempt }}
+          path: build/ios/export/*.ipa
+          if-no-files-found: error
+          retention-days: 3
+      - name: Upload directly to TestFlight
+        if: inputs.upload_testflight == true || (github.event_name == 'push' && vars.AUTO_SUBMIT_TESTFLIGHT == 'true')
+        env:
+          ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: bash scripts/ci/upload-testflight.sh
+      - name: Remove signing material
+        if: always()
+        run: bash scripts/ci/cleanup-ios.sh
