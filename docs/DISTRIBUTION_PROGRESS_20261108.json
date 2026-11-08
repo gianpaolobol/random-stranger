@@ -35,7 +35,22 @@
     "internal_group_id": "0a610638-9faa-4898-b887-f430f72c1bd0",
     "automatic_distribution": false,
     "owner_tester_state": "Invited",
-    "installation_verified": false
+    "installation_verified": true,
+    "installation_evidence": "Owner reported successful TestFlight installation on 2026-11-08",
+    "device_startup_verified": false,
+    "device_startup_status": "immediate_crash_reported_by_owner",
+    "startup_investigation": {
+      "original_simulator_run": 42434390153,
+      "original_result": "DYLD symbol missing _OBJC_CLASS_$_RCTStatusBarAppearance from ExpoModulesCore expected in React",
+      "candidate_commit": "c233b9d498b974063f80859521e6b74c9a635ad0",
+      "candidate_change": "Pin expo-modules-core 58.0.11",
+      "verification_run": 42435633298,
+      "verification_status": "in_progress",
+      "unit_tests_passed": 114,
+      "typecheck": "pass",
+      "apple_crash_feedback": "No Crash Feedback",
+      "new_testflight_upload": "not_started_until_native_launch_passes"
+    }
   },
   "android": {
     "play_app_id": "4973696627498088796",
