@@ -1,0 +1,1 @@
+Leggere CONTINUITA.md e la specifica in docs/superpowers/specs. Non confondere demo, export JS, build native firmate e pubblicazione store. Salvare blocchi coerenti su remoto. Segreti esclusi da Git. Non modificare Facciamo Balotta. Non sanzionare mai un rifiuto sessuale.

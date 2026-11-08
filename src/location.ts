@@ -1,0 +1,2 @@
+import * as Location from 'expo-location';
+export async function currentPosition(){const p=await Location.requestForegroundPermissionsAsync();if(p.status!=='granted')throw Error('Posizione non autorizzata. Puoi scegliere la zona manualmente e chiedere assistenza per il check-in.');const result=await Location.getCurrentPositionAsync({accuracy:Location.Accuracy.High});return {lat:result.coords.latitude,lon:result.coords.longitude,accuracy:result.coords.accuracy??9999};}
