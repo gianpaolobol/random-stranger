@@ -41,15 +41,22 @@
     "device_startup_status": "immediate_crash_reported_by_owner",
     "startup_investigation": {
       "original_simulator_run": 42434390153,
-      "original_result": "DYLD symbol missing _OBJC_CLASS_$_RCTStatusBarAppearance from ExpoModulesCore expected in React",
-      "candidate_commit": "c233b9d498b974063f80859521e6b74c9a635ad0",
-      "candidate_change": "Pin expo-modules-core 58.0.11",
-      "verification_run": 42435633298,
-      "verification_status": "in_progress",
+      "original_result": "DYLD symbol missing _OBJC_CLASS_$_RCTStatusBarAppearance",
+      "candidate_commit": "15cf2dbfced20f20468f1a7d40bdda25380aea1a",
+      "candidate_change": "Pin Expo Core58.0.11 and JSI58.0.7; build all Expo iOS modules from source",
+      "verification_run": 42436848726,
+      "verification_status": "success",
+      "native_release_build": "pass",
+      "native_process_survival": "pass",
+      "native_ui_screenshot": "App welcome/demo interface rendered",
+      "artifact_id": 13599559629,
+      "artifact_digest": "sha256:26c958a59b1e549125bd1646cc2c07d0419e22f9421bdd33c3be02c133ee9fbf",
       "unit_tests_passed": 114,
       "typecheck": "pass",
-      "apple_crash_feedback": "No Crash Feedback",
-      "new_testflight_upload": "not_started_until_native_launch_passes"
+      "device_retest": "pending",
+      "replacement_signed_run": 42438255269,
+      "replacement_build": "12001",
+      "replacement_upload": "in_progress"
     }
   },
   "android": {

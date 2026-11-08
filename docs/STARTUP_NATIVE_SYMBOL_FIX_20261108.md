@@ -1,6 +1,13 @@
-# Native startup crash — reproduced
-Run 42434390153 compiled and installed the Release simulator app, then reproduced termination at launch (DYLD SIGABRT): Symbol not found _OBJC_CLASS_$_RCTStatusBarAppearance, referenced from ExpoModulesCore.framework, expected in React.framework. Report in artifact 13598933390. This establishes a binary mismatch before JavaScript starts; equivalence to the owner's crash still requires the device report or a successful device retest.
-Installed expo 58.0.2 declares expo-modules-core ~58.0.11; previous lock selected 58.0.30, whose ExpoRootViewController.swift references RCTStatusBarAppearance, absent from react-native 0.88.0-rc.3 sources. Downloaded official npm package expo-modules-core 58.0.11 does not contain that new controller. Added exact override 58.0.11 and regenerated lockfile. No framework source patched, no permissions changed.
-Regression status: original native launch RED. Corrected native Release launch not yet verified. Run manual ios-startup workflow on this candidate before rebuilding TestFlight. No claim that the owner crash is fixed before proof.
+# Startup regression verified — 2026-11-08
 
-Run 42435633298: precompiled Swift interface mismatch (Swift 6.3.1 vs runner 6.3.3). Run 42436384409: source build exposed JavaScriptValue noncopyable / JavaScriptValuesBuffer API mismatch. Core58.0.11 declares JSI~58.0.7; lock had JSI58.0.22. Added JSI58.0.7 exact override to align companion native source. Both workflows already opt out of precompiled Expo modules (EXPO_USE_PRECOMPILED_MODULES=0). Corrected native launch still pending. No new TestFlight upload.
+Original native Release simulator run 42434390153 reproduced termination at launch: DYLD Symbol missing _OBJC_CLASS_$_RCTStatusBarAppearance, referenced by ExpoModulesCore.framework and absent from React.framework. This occurs before JavaScript.
+
+Final candidate commit 15cf2dbfced20f20468f1a7d40bdda25380aea1a pins expo-modules-core58.0.11 (Expo58.0.2 declared baseline) and companion expo-modules-jsi58.0.7 (Core declared baseline). Both iOS workflows set EXPO_USE_PRECOMPILED_MODULES=0 so Expo modules compile with the runner toolchain. No framework source patched.
+
+Intermediate evidence: run42435633298 exposed an incompatible precompiled Swift interface; source-build run42436384409 exposed JSI58.0.22 API changes. These were not distributed.
+
+Verification on final candidate: npm ci succeeded;114/114 tests passed; TypeScript passed. Run42436848726 completed SUCCESS: Release simulator build, installation, launch and process-survival check passed. startup.png displays the actual Random Stranger welcome/demo UI. Artifact13599559629 SHA25626c958a59b1e549125bd1646cc2c07d0419e22f9421bdd33c3be02c133ee9fbf. No RandomStranger crash report was produced in the artifact.
+
+Replacement signed iOS workflow42438255269 is running on the SAME source commit, expected version0.1.0 build12001. Upload/presence/installability not yet verified. Device retest still pending; simulator success does not prove the owner's iPhone startup. Build11001 remains the previously installed crash report.
+
+Official source-build option: https://docs.expo.dev/guides/prebuilt-expo-modules/
