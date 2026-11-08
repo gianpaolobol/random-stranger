@@ -21,3 +21,7 @@ Entrambe le versioni distribuite sono DEMO con dati fittizi, senza GPS, login so
 - IPA verified:it.randomstranger.app,0.1.0,12001; SHA256d36d8a57b827e26a3a955e604a5f1910cefe3648df2df78c315aec2fdda39704.
 - Apple authenticated Build Uploads:0.1.0(12001),Processing,Apple delivery UUID0b92a48f-5aea-441b-bfc9-a366cfcfb541. This proves received upload; it is not yet proof of a selectable TestFlight build or installability.
 - Simulator Release startup regression passed on identical source:run42436848726. Screenshot:docs/screenshots/ios-startup-pass-20261108.jpg. Device retest pending.
+
+### Final authenticated verification
+Apple completed processing. Build0.1.0(12001)appears in TestFlight and is assigned to existing internal group Collaudo personale,1tester2builds. Internal state:Testing; external listing:Ready to Submit. Available to the existing owner tester. The owner’s previous11001installation is confirmed by Apple(iPhone13mini,iOS18.6.2). New12001device startup remains unverified until owner updates and opens it. No new groups/testers or manual emails created. Existing TestFlight monitor remains disabled; no new monitor was created.
+Verified group URL:https://appstoreconnect.apple.com/teams/8f57d241-76f9-4226-a912-f2ef24ac1a92/apps/6832108281/testflight/groups/0a610638-9faa-4898-b887-f430f72c1bd0/builds

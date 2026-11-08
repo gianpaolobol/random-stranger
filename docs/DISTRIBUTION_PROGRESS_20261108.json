@@ -10,24 +10,24 @@
     "platform": "ios",
     "upload_testflight": true,
     "status": "success",
-    "testflight_available": false,
+    "testflight_available": true,
     "build_number": "12001",
     "version": "0.1.0",
     "archive": "success",
     "ipa_export": "success",
     "testflight_upload": "success",
-    "apple_console_last_observed": "Build Uploads0.1.0(12001) Processing; no replacement build assigned to group yet",
+    "apple_console_last_observed": "Collaudo personale:1Tester,2Builds.0.1.0(12001)Testing. Owner installed previous11001 on iPhone13mini/iOS18.6.2; new12001 device retest pending.",
     "delivery_uuid": "0b92a48f-5aea-441b-bfc9-a366cfcfb541",
-    "apple_upload_status": "Processing",
-    "apple_build_status": "not_in_builds_list_yet",
-    "testflight_present": false,
+    "apple_upload_status": "Complete",
+    "apple_build_status": "Testing (internal group); Ready to Submit (external listing)",
+    "testflight_present": true,
     "testers_configured": true,
-    "testflight_url": "https://appstoreconnect.apple.com/teams/8f57d241-76f9-4226-a912-f2ef24ac1a92/apps/6832108281/testflight/ios",
+    "testflight_url": "https://appstoreconnect.apple.com/teams/8f57d241-76f9-4226-a912-f2ef24ac1a92/apps/6832108281/testflight/groups/0a610638-9faa-4898-b887-f430f72c1bd0/builds",
     "internal_tester_count": 1,
     "internal_group": "Collaudo personale",
     "internal_group_id": "0a610638-9faa-4898-b887-f430f72c1bd0",
     "automatic_distribution": false,
-    "owner_tester_state": "Invited",
+    "owner_tester_state": "Installed previous11001;12001available",
     "installation_verified": false,
     "device_startup_verified": false,
     "device_startup_status": "awaiting_retest_on_replacement",
@@ -48,7 +48,7 @@
       "device_retest": "pending",
       "replacement_signed_run": 42438255269,
       "replacement_build": "12001",
-      "replacement_upload": "workflow_success_and_authenticated_Apple_Processing"
+      "replacement_upload": "success_and_Apple_Complete"
     },
     "previous_builds": [
       {
@@ -65,7 +65,9 @@
       }
     ],
     "ipa_sha256": "d36d8a57b827e26a3a955e604a5f1910cefe3648df2df78c315aec2fdda39704",
-    "ipa_backup_library_file_id": "libfile_0ba59cbea00081919851204660ae0203"
+    "ipa_backup_library_file_id": "libfile_0ba59cbea00081919851204660ae0203",
+    "internal_group_build_count": 2,
+    "testflight_verified_at_utc": "2026-11-08T02:46:30.802Z"
   },
   "android": {
     "play_app_id": "4973696627498088796",
