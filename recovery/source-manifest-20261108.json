@@ -1,0 +1,882 @@
+{
+  "source_commit": "b56c57d19a50bc7b56f3964a6343f73449817fc0",
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 731,
+      "sha256": "5147cef17363d29d560b0794be8740de9c02d302f17407ea2179e28aa3a0237b",
+      "git_blob": "3d7c3d0562b1458281aa2138621e698ccc2fb106"
+    },
+    {
+      "path": ".github/workflows/native-demo.yml",
+      "bytes": 5671,
+      "sha256": "635a3413a8f797d31005c3004539e668472c132c9dda4844abe54e147db47c9f",
+      "git_blob": "87fedcc86e91ba407b96cc4c5727eef15c2c1042"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 225,
+      "sha256": "63b557b7be1705c62037dcbc59ee3729f89468ff2f6aa8cd5bcd15c0314aea43",
+      "git_blob": "341e24cfcecb3cf1000b4bdac95abeb395cf7bac"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "bytes": 105,
+      "sha256": "9b220df7b9962115eb44a4229b6e656941b7d15ac4f69fea369e8d41621d8b10",
+      "git_blob": "7e2442c12fc9215d5e58bb2c33b04ecc9ca387f7"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 273,
+      "sha256": "67aa77ee577104ba28b0e256216277bde7493da5fda002c819a8e1ba5fb6c458",
+      "git_blob": "ac60d71abae786a940ebb6a4e3d622b91191c23d"
+    },
+    {
+      "path": "App.tsx",
+      "bytes": 39892,
+      "sha256": "733e88ad97373e333aa43adebb56f3a0e91587803ea1b176266db5cda11bd247",
+      "git_blob": "7ea83abd532ba4ae4fd10ca60f1ca19e236be3ec"
+    },
+    {
+      "path": "CONTINUITA.md",
+      "bytes": 29074,
+      "sha256": "b38be8670ece541dd07a83cf54265dc33342b52870d001d314ba0723f765b814",
+      "git_blob": "2cea33d92b58c95b4bd7360ff41354cb47691f6f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7855,
+      "sha256": "1e41286d967e4780feffdb68677b94ef36614d4b72491a6d24e1a82ab9e2cf85",
+      "git_blob": "fcac81441c988ea0285da89bda5ac3a9ebbfdad8"
+    },
+    {
+      "path": "app.config.ts",
+      "bytes": 2285,
+      "sha256": "33b8b54dbc3cec59c13fd80a153d46495738605a550dc26901c19b4684eb473e",
+      "git_blob": "0e01971f790620ecb03fd90a5a057f290b6b2f69"
+    },
+    {
+      "path": "assets/app-icon.png",
+      "bytes": 1252932,
+      "sha256": "f43894834706ab7fa873df574ca430ac51b789f7f3a122905861fdfd087b4ffd",
+      "git_blob": "e38f18006ba9dfe6fcb632b149ad08d0bd2da43c"
+    },
+    {
+      "path": "assets/brand-approved.png",
+      "bytes": 1426335,
+      "sha256": "3067d4e90c4f4aafc4051807a589fcf22dea1357d891c73d1591a8a2699bb6f1",
+      "git_blob": "3fb92a981c6d6350544f4718f2e0d44357ae7689"
+    },
+    {
+      "path": "assets/fonts/FONT_README.md",
+      "bytes": 2108,
+      "sha256": "e40c56facf55893b136e6175186048febb5e562df240da0c1a1c01fa2b8b9dfc",
+      "git_blob": "3a9f139f2eb8cff6069a1e95e30af92b3ac99c47"
+    },
+    {
+      "path": "assets/fonts/RandomStranger-Regular.ttf",
+      "bytes": 68416,
+      "sha256": "cae3983b1d67f7489b10baabe20d01aa10acf220dae18146be943d7784621303",
+      "git_blob": "465e661620e8c96a668a3d9e8c1da68212edbcc8"
+    },
+    {
+      "path": "assets/fonts/RandomStranger-Regular.woff2",
+      "bytes": 21892,
+      "sha256": "a4e43668db7d7ccd7d98f0a35980dc2beb6217474bf010ff55dbe0f05d0e76f4",
+      "git_blob": "9da71aabad9cf644dac032d00693167f224668a9"
+    },
+    {
+      "path": "assets/fonts/archive/RandomStranger-v1.ttf",
+      "bytes": 68624,
+      "sha256": "9272aff245e477f5dc8e5033f9acfb940a90f7ff54f46ab1de8e40573844551f",
+      "git_blob": "19e47cc790655c2c890b6b80e21067b3f1b9856d"
+    },
+    {
+      "path": "assets/fonts/archive/RandomStranger-v2.ttf",
+      "bytes": 68416,
+      "sha256": "cae3983b1d67f7489b10baabe20d01aa10acf220dae18146be943d7784621303",
+      "git_blob": "465e661620e8c96a668a3d9e8c1da68212edbcc8"
+    },
+    {
+      "path": "assets/fonts/fluid-v3/README.md",
+      "bytes": 805,
+      "sha256": "ba617eecbfe1f31096e665b1e51049d595e534d9cd36b35effd3fbab7d06b2bc",
+      "git_blob": "9915ac68c8baa4c0eb77ad92a6010b3ab9759f2f"
+    },
+    {
+      "path": "assets/fonts/fluid-v3/RandomStranger-Regular.ttf",
+      "bytes": 85196,
+      "sha256": "18967d1a8e81b0e6b9011d18c877f9a3cf1dac0b443da19859924b4671c3fb1f",
+      "git_blob": "d61ef046fd7824178d102f94584cc88089a01644"
+    },
+    {
+      "path": "assets/fonts/fluid-v3/RandomStranger-Regular.woff2",
+      "bytes": 24584,
+      "sha256": "b50f7351994f834f3ff1bacc1777aaeed57d3bb3792f8f325b6afcbb81eea0f1",
+      "git_blob": "4b904bbbe1302efe33c550068679337f3ade8b06"
+    },
+    {
+      "path": "docs/ENCOUNTER_ALIASES.md",
+      "bytes": 2472,
+      "sha256": "044efaf3e1a4b53faae4892959a15e82720249fefa7180a4cfe07e9cae5c8ff0",
+      "git_blob": "e503ff63ef6b0cd6b16cbf64b0fc20585333caf6"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_LEDGER.md",
+      "bytes": 1104,
+      "sha256": "c363d80a9286f5d7616812f186307cd1dfe0f16f5a72cfdccc9bac760789d90f",
+      "git_blob": "a69a7f973b0441ecd6e1a9a8db2ef0b44ebb4dd0"
+    },
+    {
+      "path": "docs/NATIVE_DEMO_VERIFICATION.json",
+      "bytes": 441,
+      "sha256": "771f8c0174742df3d735a0e22c445d7bae3b16f10500ef29c7d2c9f011bd4dae",
+      "git_blob": "dcfbb742a005b262011dae049352cbdeeeed6627"
+    },
+    {
+      "path": "docs/NATIVE_VERIFICATION.json",
+      "bytes": 452,
+      "sha256": "2763f74947b4ae1df103b4011cd509689508f4e77b7885fe7c401c2de5f02db8",
+      "git_blob": "42903070ff78edded242f71b7474779264fb5d62"
+    },
+    {
+      "path": "docs/OPTIONAL_INVITATIONS.md",
+      "bytes": 5238,
+      "sha256": "73efb32f6851480caa8c6895538d57ef39a98538e0cb02c37ebc7dea275dc89f",
+      "git_blob": "626e58841a310e812cb93f3ec13344c94e4c9a7d"
+    },
+    {
+      "path": "docs/PUBLICATION_2026-11-07.json",
+      "bytes": 525,
+      "sha256": "4c452cff4fbff0c5381195d09a5cbb3d0818fcd9d0c258e788f8387bac118473",
+      "git_blob": "2de256f159510522e6684968d96b0006f4e19ff4"
+    },
+    {
+      "path": "docs/STORE_SUBMISSION.md",
+      "bytes": 7863,
+      "sha256": "9c8292924de227f8a8cdda421e7c6852753ba79620c2fbae35d79aa128fe1171",
+      "git_blob": "0b97dc7a0ea18cee102bb3d91f82f1155de53845"
+    },
+    {
+      "path": "docs/screenshots/aliases-font-fluid.jpg",
+      "bytes": 100718,
+      "sha256": "cbc2dcccb0ef2e1ac8cb129e353022983e791a8ceb9508afcda7d6697d630ae9",
+      "git_blob": "544128c0613a18a73d1bf39e21f1620434a7b5a6"
+    },
+    {
+      "path": "docs/screenshots/bozza-conservata.jpg",
+      "bytes": 92215,
+      "sha256": "4604f87f9ab064dd16927e02f95410aaa4d16eb60c61373498c2d3aa4bed97fb",
+      "git_blob": "3a33e6a3f657c541d5fc8a5db7c2f2ed6198fa41"
+    },
+    {
+      "path": "docs/screenshots/dashboard.jpg",
+      "bytes": 96428,
+      "sha256": "031a1acec699112c3ab75700c669672c43efda8cc5e887dfbe87bfb82c18f0ce",
+      "git_blob": "6a9f3d463615a661b6be608eee96ff3f27b7b83d"
+    },
+    {
+      "path": "docs/screenshots/demo-store.jpg",
+      "bytes": 109080,
+      "sha256": "c9262d331b41bca1fe1a6bca51e2a123468d9bcbcfad4931f0759caac2d303fb",
+      "git_blob": "e35c636b0a5f7aa2d77d37a6f60b84eb4b229a4a"
+    },
+    {
+      "path": "docs/screenshots/interessi-multipli.jpg",
+      "bytes": 94456,
+      "sha256": "14af8632c5effde183f1ed1151ec1f4fd609d5d4751854cab6640cb8ba7c48e5",
+      "git_blob": "33654b188354f8758b9cb9c8fd93e655310916bf"
+    },
+    {
+      "path": "docs/screenshots/invitati-solo-nomi.jpg",
+      "bytes": 76770,
+      "sha256": "e726aef6335a227c2fa36242b4463ea87bf37fa1ffd7ba9baf718838c2180718",
+      "git_blob": "46897e817ab616e740888d8f10af771a02c649fc"
+    },
+    {
+      "path": "docs/screenshots/invitations.jpg",
+      "bytes": 81637,
+      "sha256": "7616ace4651e0ba4634b4a1e56b89e38f714ed365232ac8841639cc29a51a254",
+      "git_blob": "ce96433d7de9d4a97cc19e4447e69180a331481b"
+    },
+    {
+      "path": "docs/screenshots/segnalazione-contenuti.jpg",
+      "bytes": 110015,
+      "sha256": "f3d716f49330ecd5d497d3e535e2e5164300fb7b185d957cde5d0b4fe1cb11d9",
+      "git_blob": "206d9c3c79d37dbf686f16c5c9e960fc198e3c16"
+    },
+    {
+      "path": "docs/screenshots/seleziona-tutti.jpg",
+      "bytes": 78486,
+      "sha256": "d1d6e6b84ba2140f4719f3dc468ce70d0a1e18165f579ffb1f1322662b315637",
+      "git_blob": "ba2dd7d21340cb4d1068c6ebaede8c643bd0d1d2"
+    },
+    {
+      "path": "docs/screenshots/solo-scritta.jpg",
+      "bytes": 91489,
+      "sha256": "61914e453a060195c78a9158bf521c80d1279a2573561c8d41f7814b2d59707a",
+      "git_blob": "e08d82d4f9edf98c60cbb996358a0569b68c6491"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-07-free-backend.md",
+      "bytes": 1419,
+      "sha256": "26a47422967d40ebe0a5028ced35e78100d720380d343a2dad82cbfdb4c47afc",
+      "git_blob": "651cab6bcc760cad228de4e712b1dcd67d9e4f50"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-07-random-stranger.md",
+      "bytes": 2674,
+      "sha256": "1651afcad1e0851d32ddf4f36337e13c881d51d0c51a3abdb8cfdbdf4b538d5d",
+      "git_blob": "77c57b8a2d423bdaca97bf9219b59996fe0438fe"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-07-runtime-beta.md",
+      "bytes": 1661,
+      "sha256": "e025e62a2a54afff31f43ff82c8275a75beb32120567b8a910044bc99165b98e",
+      "git_blob": "818b56c94b93be46a508f7c0089d9a2a2374b486"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-07-store-demo.md",
+      "bytes": 1768,
+      "sha256": "c9d2a372f6e399e39f361138322992018ee60f5d92e3416e5292fda5146ca469",
+      "git_blob": "f2a7f4a00eb726b430acdff015041e0cfbaa4a01"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-07-store-release.md",
+      "bytes": 1514,
+      "sha256": "dadcd0e59ca4e93bc5dedb537bae56e75273f52bb4b4bb80e62c43bcd6720249",
+      "git_blob": "9fc7a6bc7ad5599090e8cc5a8ff253504d4fe39a"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-08-github-native-builds.md",
+      "bytes": 1812,
+      "sha256": "7544c48f8bddf932e3aba2352867c3fbc3d13b81386e3ecccf983ac7d3e5fc89",
+      "git_blob": "9d2e5f6a3cc644e15b2c400a6618374168a7b831"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-07-random-stranger-design.md",
+      "bytes": 2591,
+      "sha256": "e89156e75c5c9dd09c4ec2f0a1220621eced0169d0e485a633768f24b509b9d1",
+      "git_blob": "ee632cb3871a441177b5376f2f4812c5bd060afb"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-08-github-native-builds-design.md",
+      "bytes": 1222,
+      "sha256": "bb24dec57bab1b0f380857c1d8cda6aa4b217c866ea6137a282ed244d8db662f",
+      "git_blob": "590e25ca35192ead1ed8b32a26139d209363b082"
+    },
+    {
+      "path": "docs/typography/DESIGN.md",
+      "bytes": 1100,
+      "sha256": "aaa192b0fe66446bfcf0bd162fd760d701ccd72565e708f2de93f054a66737e1",
+      "git_blob": "dc435747e1830fe6811ca856a1ff2fe2fd80a428"
+    },
+    {
+      "path": "docs/typography/RandomStranger-fluid-v3-comparison.png",
+      "bytes": 122359,
+      "sha256": "4f9816f60fbfe2a8eeecc4bb11ab1933d0ad0ebc06f15a6427c3d9e4a50d5b6f",
+      "git_blob": "46a2fd53ca95e5119eb054df19f01eb8758bf775"
+    },
+    {
+      "path": "docs/typography/RandomStranger-fluid-v3.png",
+      "bytes": 148641,
+      "sha256": "579b05798decb051bc0f01215105d7a64e122c1213bee3f6c27fabbf63043b65",
+      "git_blob": "20cae3c573279a8e3b915f26e3027bb311f17673"
+    },
+    {
+      "path": "docs/typography/RandomStranger-specimen.png",
+      "bytes": 169733,
+      "sha256": "5229e9457eea6f6e02369c83c00d3cb099168341fbc2084ac67efc48d1360367",
+      "git_blob": "87bc1c8df97a749cda2c232e26a64fe6f8693e29"
+    },
+    {
+      "path": "docs/typography/RandomStranger-v2-comparison.png",
+      "bytes": 105185,
+      "sha256": "361c7b424121c813e05cc98a3e09b80661816f2546a26b5dad090a1620602820",
+      "git_blob": "6f53ffcbc61327151513dd46a9fbe402355677c5"
+    },
+    {
+      "path": "docs/typography/RandomStranger-v2-small-text.png",
+      "bytes": 74095,
+      "sha256": "159e6abf1cec8c6832c29d25821bf1e68c56303746d771ccabcc86b78d855b5a",
+      "git_blob": "ef9075565ac67104f9d10b1a4a72d48b619c72f1"
+    },
+    {
+      "path": "docs/typography/v1/specimen.png",
+      "bytes": 160932,
+      "sha256": "8cf3b77002b3a4ec248024bb7cc7ad733616637dd8a9fcb846e0ff7a8f912afe",
+      "git_blob": "6bfd07b2ed470516b398ae207825d56bc869f423"
+    },
+    {
+      "path": "eas.json",
+      "bytes": 1494,
+      "sha256": "2fa40867cd9b950fd8282a5acc3afee31c04e9edf15e13d8f48a1c97e2c8acb8",
+      "git_blob": "ce23516a1c8861a0dd0efb81fb0b9dcc603367f9"
+    },
+    {
+      "path": "index.ts",
+      "bytes": 95,
+      "sha256": "d542e11db8fce8320808a35a1b725ebf1a63a449ee2f1356405b61434ba48a5e",
+      "git_blob": "cfcdf12e6600d8ac9bbeabb26a7489c5f19a911e"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 148799,
+      "sha256": "3665d79699a2d14b58f66f60c7d16e9c4bbbd65d8aa689e24ea85c20f7b5eb9e",
+      "git_blob": "ff4a369b3d2efbff8bab90b91f007bdc8edb2b63"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1779,
+      "sha256": "759890f0e18ecf8c26d5caa492d8b2f3f63d9e7fdb6deeb8411454213ceda26b",
+      "git_blob": "a4eb50e3d34574db741c6cc557f50cde017cec54"
+    },
+    {
+      "path": "plugins/withMinimalPermissions.cjs",
+      "bytes": 982,
+      "sha256": "21c2649f499c9d05e5ce3c62f257a5b5a077988b02769ca0e9fc06a99ca934c8",
+      "git_blob": "798671cc8ad6f7297f406c91d4387873827ad7ce"
+    },
+    {
+      "path": "scripts/build-cloud-store.mjs",
+      "bytes": 6006,
+      "sha256": "9f4c090662f31f241ea7b54bc3a8b83764c4e06380366328cec3503e7fd5d7e6",
+      "git_blob": "073092157a081b12efe4bde8751caaf751178cd2"
+    },
+    {
+      "path": "scripts/build-cloud-tests.mjs",
+      "bytes": 2321,
+      "sha256": "9ab0f0d2b537c41a518bf93ffbe88f93c7829c945d4aa7992bd35bd142440610",
+      "git_blob": "2a68e132722ffabfc99e64ae6793de15e1edb66b"
+    },
+    {
+      "path": "scripts/build_font.py",
+      "bytes": 21883,
+      "sha256": "0c477ef743b090b8b27badbbfae6e02a09060b3accb1cbf0a847f978eb7c69b1",
+      "git_blob": "0268645de746854d1be7086428b885c4ed984604"
+    },
+    {
+      "path": "scripts/build_font_fluid.py",
+      "bytes": 28123,
+      "sha256": "4a5186871d8db820fe6162c8c847a4d02af5e3ea3967049100606849d5051906",
+      "git_blob": "23d038227ad1b1b6c83416a452610d7ed9f185aa"
+    },
+    {
+      "path": "scripts/build_font_v1.py",
+      "bytes": 21790,
+      "sha256": "6755e8c8c71abfa06c00874d691d0a243f00d94b9316506df6ee88feadc71940",
+      "git_blob": "71dfd99d4481839d87a4742f9361b0168fd889eb"
+    },
+    {
+      "path": "scripts/build_font_v2.py",
+      "bytes": 21883,
+      "sha256": "0c477ef743b090b8b27badbbfae6e02a09060b3accb1cbf0a847f978eb7c69b1",
+      "git_blob": "0268645de746854d1be7086428b885c4ed984604"
+    },
+    {
+      "path": "scripts/check-store-build.mjs",
+      "bytes": 1566,
+      "sha256": "ae657e8dd947073cd774de4b3c554971a993e7b57e6cef50e78edc171dc8af07",
+      "git_blob": "805892dca7207fbddba9e429c25df95738bbbeda"
+    },
+    {
+      "path": "scripts/ci/build-number.mjs",
+      "bytes": 171,
+      "sha256": "e38c858622a913f0797f74fe2dc64fd6c8feb8eee2684c46fa44e749d10e0387",
+      "git_blob": "6033ce8c6646bed7d5d5fae2a645e7505c2a8ad3"
+    },
+    {
+      "path": "scripts/ci/cleanup-ios.sh",
+      "bytes": 431,
+      "sha256": "79aaaa2754dc007ae5025ecb879754be500bebac8f4769c1c25dd6ca19bbea90",
+      "git_blob": "d54341b3b1e477eff0958d68f00065adc38b2c3a"
+    },
+    {
+      "path": "scripts/ci/configure-android.mjs",
+      "bytes": 750,
+      "sha256": "d24dc25961599cdce5a8611ac53a59967c23b0ebd5f3fe0522a294b45d436951",
+      "git_blob": "1b242a29644cdf732afb1acb09f8a2078d82a2bd"
+    },
+    {
+      "path": "scripts/ci/configure-ios.rb",
+      "bytes": 802,
+      "sha256": "351a52836e2332bcda52f8377477da27a58291f0c983e8a438a71cccaa86a764",
+      "git_blob": "7f2073faae8a580564ef468a5e44fde651267879"
+    },
+    {
+      "path": "scripts/ci/prepare-ios-signing.sh",
+      "bytes": 2554,
+      "sha256": "3163fa6c0a697b07c980527656d2bd25c604f6b9cabd4d78fbb4c1031b5a8cfa",
+      "git_blob": "caa0d6e47c8debe5a0e243a21b4a3df642239bd6"
+    },
+    {
+      "path": "scripts/ci/upload-testflight.sh",
+      "bytes": 662,
+      "sha256": "9c44977c3be3248e0045bdf64eb621ee73ec2e72705fcfdb4332a03b3d42dabb",
+      "git_blob": "5cd36daf234737eb8293303d4db141b26bc498b2"
+    },
+    {
+      "path": "scripts/ci/verify-android-signature.sh",
+      "bytes": 592,
+      "sha256": "fb62c734db66dad6e5832a265afb38334de5afd324d95b66a5578737915006ff",
+      "git_blob": "1925cc10fe14b5c1d20df3b4c3dc83e95e3644e2"
+    },
+    {
+      "path": "scripts/compare_fluid_font.py",
+      "bytes": 1055,
+      "sha256": "5e01ade2fa94b8862062989847c913d87740be1ee805f4c43d814f2b7be438fa",
+      "git_blob": "23f7ec7f1f8cabeb851e4fefdb98069cbbbac4de"
+    },
+    {
+      "path": "scripts/compare_fonts.py",
+      "bytes": 1076,
+      "sha256": "1a91f68d029560fb405dd3f2a15977e51683211b64ae9e606e31d566bc047744",
+      "git_blob": "6362f3b682103ccb2ab062fb937274c32a53b747"
+    },
+    {
+      "path": "scripts/export-server.mjs",
+      "bytes": 567,
+      "sha256": "d6a81743d49a4c51984b5bed36274d09a7a223902016af2ef86694c0c93ac1a8",
+      "git_blob": "1cf0f15673e741a78f0bb69fca47cf5e3890c0ad"
+    },
+    {
+      "path": "scripts/font-requirements.txt",
+      "bytes": 54,
+      "sha256": "62c36603ddb67cf6ac6d319d3ae2f842728bdee9ab86989a5cb1ff791b581714",
+      "git_blob": "1397ed7a999f62e57ec75387cf7ab3aaca215fa5"
+    },
+    {
+      "path": "scripts/package-server.mjs",
+      "bytes": 6224,
+      "sha256": "d5b78cc6565e2fd08833f3568a5a9d7fb46f9df67cb216f1437692c1e8769a6b",
+      "git_blob": "28e58ef81fdc0192dadb0a34c8ca9e0c18acb944"
+    },
+    {
+      "path": "scripts/render_fluid_specimen.py",
+      "bytes": 1040,
+      "sha256": "89dd2f873fb1b6d398e45ca3fa99e37630658f9dcda349c2c4bdb2eedb7b54b5",
+      "git_blob": "3eac0bbd628a89131e7818d10bc80405b46928e3"
+    },
+    {
+      "path": "scripts/render_font_specimen.py",
+      "bytes": 1448,
+      "sha256": "e0a4c799a0265b4287b59981e289605bf0fe080ec7bc849d8718be76d1b46b81",
+      "git_blob": "4fcc3bfb1ba838c22dfa99795662b7e7252c8819"
+    },
+    {
+      "path": "scripts/render_font_specimen_v1.py",
+      "bytes": 1448,
+      "sha256": "e0a4c799a0265b4287b59981e289605bf0fe080ec7bc849d8718be76d1b46b81",
+      "git_blob": "4fcc3bfb1ba838c22dfa99795662b7e7252c8819"
+    },
+    {
+      "path": "scripts/smoke-cloud.mjs",
+      "bytes": 4086,
+      "sha256": "280f121ad8475f350b7511098d92d39703e1a6d22a689d01efc036a56fc1b91b",
+      "git_blob": "70fb263ca9a7cfedb36280ebc20a1efdac204f8b"
+    },
+    {
+      "path": "scripts/test_font.py",
+      "bytes": 1581,
+      "sha256": "d6fc4a086b29bf639fc2e93c334a5f953acb7312bd31dc5681667953fe4b3d34",
+      "git_blob": "b6ea4e3857d4ca1522b33b23c5a3917a2efa55c7"
+    },
+    {
+      "path": "scripts/test_font_fluid.py",
+      "bytes": 870,
+      "sha256": "1fa7242c0d489caa23889ebe2a49a8cc4e99169893002b6d8e4c4760e2a9a03d",
+      "git_blob": "0024d13f168a1709ae63ab88bb6315575e50e7f3"
+    },
+    {
+      "path": "scripts/verify-native.mjs",
+      "bytes": 3363,
+      "sha256": "86a81b6f387fde4cb3af2c809ec6a0127994a1e27c899210bb9ae5c44241fb19",
+      "git_blob": "6171ee9f85a3609ee97ca27e5e5f3291904df34a"
+    },
+    {
+      "path": "server/api.mjs",
+      "bytes": 3518,
+      "sha256": "a1ee24ef279ebe1f0618181479b574a5e088ccc9444b34382c2136fcd7a8d236",
+      "git_blob": "f122e2cebc965d85869682964bec76a05a53e100"
+    },
+    {
+      "path": "server/apple.mjs",
+      "bytes": 3539,
+      "sha256": "da320dddc66e5295f3e8f2d190db67dc593810800f24679c455a41b6d52e1e8a",
+      "git_blob": "25ba086d232305c3c66346a92b7cbe5bb415c765"
+    },
+    {
+      "path": "server/auth.mjs",
+      "bytes": 14818,
+      "sha256": "a05d6815ab2638b2071cfbbd765c2ef9d06d6f2816807c21d5209167d5145130",
+      "git_blob": "770483267fef7584add9e3e00515abbd8fb1b351"
+    },
+    {
+      "path": "server/cloud-store.mjs",
+      "bytes": 22704,
+      "sha256": "8d4f0c4d82625bc6b662f007f3cf76b3a37b8d0037e75ab3aa4a2a6bc8253ecc",
+      "git_blob": "58f3c332a876bf83f04e28e5703d9c4faa77fa40"
+    },
+    {
+      "path": "server/config.mjs",
+      "bytes": 2727,
+      "sha256": "4c15b3e8355e612e4519ebbb9c1446754b09830f7a345e7cb6a3922e11fe23e6",
+      "git_blob": "4e54fea4ccb857b5b39e76a2e8a77eb0dc36d273"
+    },
+    {
+      "path": "server/http.mjs",
+      "bytes": 834,
+      "sha256": "6deb48599537008d8ac81fd02f2dc4caa69297d53303ff8bf82e473cf96a627f",
+      "git_blob": "8f04d5f6620fffdec6f9a362bbd08598fa32c519"
+    },
+    {
+      "path": "server/index.mjs",
+      "bytes": 922,
+      "sha256": "bfb5fdfe0757184b749d31ffe837c645f9be5191fabf0561df8b44cd7068dba2",
+      "git_blob": "83fa21272d6cbeee8af8f417e90277ea62cf8ad7"
+    },
+    {
+      "path": "server/moderate.mjs",
+      "bytes": 1103,
+      "sha256": "784af73eb7e983920f23fc68e37add64a1b91a2e0e962523d17f2fd602bcad7a",
+      "git_blob": "dd4486e167adc143a7243e6a1ac77287e2d4b817"
+    },
+    {
+      "path": "server/static.mjs",
+      "bytes": 1208,
+      "sha256": "8942171c638f71e58b2bb4b9ac882776aecc0ca298d55617927a9c346c0e6f80",
+      "git_blob": "4109536a0edb57b3ad5a2c55c9ff496ca56faa36"
+    },
+    {
+      "path": "server/store.mjs",
+      "bytes": 19407,
+      "sha256": "5068eee9d4d795479c16938e85751a86b05cd0144342564e4eb7e255d40a945f",
+      "git_blob": "35c36ba0c2d0f216718eb019202f06bd735823f3"
+    },
+    {
+      "path": "src/AppleSignInButton.tsx",
+      "bytes": 795,
+      "sha256": "3458b3512126dc0031642ae47c88e5749220dbe432d104b5fee4c8a66e59fcc7",
+      "git_blob": "d0f9b6149c9fe1221298594bdd0f4c6bd947a0ac"
+    },
+    {
+      "path": "src/BrandWordmark.tsx",
+      "bytes": 661,
+      "sha256": "0f75dc0603b9f267f56832334d2888973b31e8fc52d26bb3f63e0e079a246f2d",
+      "git_blob": "84ea2207176353eb5a4f0c6f5a8bbd3373f2159e"
+    },
+    {
+      "path": "src/InterestsField.tsx",
+      "bytes": 1133,
+      "sha256": "54b7f9f5235d90a9fe92b6289177c7c5c68932ae3b405faa1314e9b3a42125f9",
+      "git_blob": "688eb105a250f66baa26f71fc3c1d0b8dedd1ded"
+    },
+    {
+      "path": "src/InvitationDialog.tsx",
+      "bytes": 6631,
+      "sha256": "bdd3732d1eb3c0bb0b5b062cd13ca49c8a489b3d62587fc1a8ecfa179d95e73e",
+      "git_blob": "d7292b3ac315513b39ddf0c02903d0a8e6530515"
+    },
+    {
+      "path": "src/aliases.mjs",
+      "bytes": 2154,
+      "sha256": "85dff0620826dc7b4e7096f06ea88f264711513de99f45cb7f238efc6555f188",
+      "git_blob": "09d6c38c88aae77f0d985fed4872df93ebfac8f1"
+    },
+    {
+      "path": "src/api-client.mjs",
+      "bytes": 1066,
+      "sha256": "e49b2171f7d828a2ebe6ec0629bb5a2126351a9df1a352f1308f6e460ac278aa",
+      "git_blob": "bd124c3570d51608fc5ad061bee5bc26883ed9d0"
+    },
+    {
+      "path": "src/api-config.mjs",
+      "bytes": 817,
+      "sha256": "473fed1428723fd684abd54c68d2326f8d1de615dd368331f5dbb4e408eba85e",
+      "git_blob": "0ba9e208bd7bc67ddbc4cc1a1e158f54b40c69b4"
+    },
+    {
+      "path": "src/auth.ts",
+      "bytes": 4620,
+      "sha256": "bfd93ea4bc1bf2ff78062b4e06abf5e2abf746a305636922fe96884a291e3795",
+      "git_blob": "39065841dae8ab8eb77f8977a37e394f432f5b2d"
+    },
+    {
+      "path": "src/ci-build.mjs",
+      "bytes": 682,
+      "sha256": "2e33f44b7a7f90d2cb6ac3144149ac2145accfabb82f33058f2f846598622359",
+      "git_blob": "b93bf2981d46515778d9b68924e0542d31a938d7"
+    },
+    {
+      "path": "src/contact-names.mjs",
+      "bytes": 313,
+      "sha256": "7e25cbab1c349e8171c9cfc00c2e0a44ab128134a7ee0073c74faeade9fffeb4",
+      "git_blob": "c80c12195f4e94e8c4bcd1a263329470882576fd"
+    },
+    {
+      "path": "src/contacts.ts",
+      "bytes": 694,
+      "sha256": "2a32e6bd1d494a0238676ff3b3b64dc23c802a0e26f9852233adbbe84a8bdc47",
+      "git_blob": "ab70d302619ce77dd94ccc1d2e23954466c91dd2"
+    },
+    {
+      "path": "src/demo.ts",
+      "bytes": 1941,
+      "sha256": "47ffcff596b8208ffdd86c40c648201a01433a74a38e5cea38e693142278f4e1",
+      "git_blob": "2e5bb40b752406b355503d135ad87cc3681fb722"
+    },
+    {
+      "path": "src/domain.mjs",
+      "bytes": 3672,
+      "sha256": "406b17339ea59cd22d6af7ce5051e7cba8c5e21a6b875ea021f275e3cc59c019",
+      "git_blob": "87001b4fa405056c27abc2f17b92995d26928138"
+    },
+    {
+      "path": "src/interests.mjs",
+      "bytes": 638,
+      "sha256": "c2d3df1e9080eb65ceb8c5b3230d795a7adb7e9fcddaca3e14173f27bc9624aa",
+      "git_blob": "0cf4fe5d7e334d6497bdc5e7983149b07f3fb8b3"
+    },
+    {
+      "path": "src/invitation-attempt.mjs",
+      "bytes": 1658,
+      "sha256": "7b257f8e729017672d17575c2f5a6b052f95e0bdeb3484b3be3f1e85bb5e0cfb",
+      "git_blob": "066b0c3c50b4475a82e2bf74228dba479472545f"
+    },
+    {
+      "path": "src/invitations.mjs",
+      "bytes": 1548,
+      "sha256": "16a16c46d9c55f0f0c303bcc343f0ad8d428efd5c223beb77a055cf906612444",
+      "git_blob": "877b5cccb858bffb332ed34f1e661384e3c968da"
+    },
+    {
+      "path": "src/location.ts",
+      "bytes": 473,
+      "sha256": "0e48dcf7787e5a2883326f51b15f947fcc966e36b1cae0122b083cfb5fd6ae8f",
+      "git_blob": "e52aa10ad03836df37d2d657aa5ca7a5e4979c43"
+    },
+    {
+      "path": "src/profile-sync.mjs",
+      "bytes": 1169,
+      "sha256": "cd81c092da78c6c53da20c5876056affffa10b4f58c85aaa9799a00d9bb7626e",
+      "git_blob": "dc32bcc71894bec0d00fe7db00a2f3c2faaa77d3"
+    },
+    {
+      "path": "src/project.mjs",
+      "bytes": 176,
+      "sha256": "570d0298a9bc559b11ff7fc9c915eba14f512969bfb2b9a7e01a1aff866dacdb",
+      "git_blob": "4bc8b8129ad3691f51f2873060e8189d351c7677"
+    },
+    {
+      "path": "src/store-build.mjs",
+      "bytes": 766,
+      "sha256": "d72844efe38e1555e2af8fe90173682a649673482da20c272ed2a34f1abcaa0c",
+      "git_blob": "903ce21c108bba77fd32a6665fd8e0736e527b71"
+    },
+    {
+      "path": "src/types.ts",
+      "bytes": 851,
+      "sha256": "50223ebbd3870658f0b64e501fe2e2652b2de082ddba00f458fe4bf41fa2ba39",
+      "git_blob": "cf8545c02e644968bd4245e5a6b121cb36892c17"
+    },
+    {
+      "path": "src/ui.tsx",
+      "bytes": 4814,
+      "sha256": "130ebb9a83a9ce1766fee26ec5661cf4921420e10b53b61a51b95fb7d82cf514",
+      "git_blob": "4a1578ea7de30c3dc0b6934e7ef8384b9973e246"
+    },
+    {
+      "path": "supabase/README.md",
+      "bytes": 2992,
+      "sha256": "b0bb0dcf9c882baf946b26ed88f5ce9020a9135ddc5ab36892362609c86895c6",
+      "git_blob": "44cb89bb8ae321363f23d5bd08ff3cbfef4182e7"
+    },
+    {
+      "path": "supabase/cleanup.sql",
+      "bytes": 613,
+      "sha256": "70a3f2775f8d7e08c4545f20723c53ae529f08d662997434682dd5424c9dd1ab",
+      "git_blob": "ff5814b740350f67c283f2906e3dd077142bfaa6"
+    },
+    {
+      "path": "supabase/functions/random-stranger/deno.json",
+      "bytes": 26,
+      "sha256": "370a6a316ced62919beaa6781d15a53d252f8542671d9ac7dfc40508b3c6304f",
+      "git_blob": "3cffbb5cb6fe3bb93d802230bec66443ac878d90"
+    },
+    {
+      "path": "supabase/functions/random-stranger/index.ts",
+      "bytes": 2092,
+      "sha256": "b5179a7aa36b7c7db2de93cc75ab5579f1c65cfe2d01889f1db5d86d1fffbd0b",
+      "git_blob": "dc4bc35652e669f05da97ee8375d18e0906aca91"
+    },
+    {
+      "path": "supabase/schema.sql",
+      "bytes": 6129,
+      "sha256": "4868481439453e7352d4cbb695e9521f3e7e46168f17c4afcd49c5804a4518ef",
+      "git_blob": "3e33c8c24c01a2eced27c138201bb6679acfe9be"
+    },
+    {
+      "path": "tests/aliases.test.mjs",
+      "bytes": 1192,
+      "sha256": "f46125685f6de3ea1efbb6db723a3f8b10df7dabc3199b3a692dc4db1325bbc0",
+      "git_blob": "9a8f6309cd288abd488511753e1939762aeb79ca"
+    },
+    {
+      "path": "tests/api-client.test.mjs",
+      "bytes": 1872,
+      "sha256": "498ce80d7988de0529b85adebe8dc93f9efc286c2df2d9d0d44c4336fd5d1645",
+      "git_blob": "81352a8003529c2fceec3e05ac6881761b545fd8"
+    },
+    {
+      "path": "tests/api.test.mjs",
+      "bytes": 5463,
+      "sha256": "8bba915d54bc918643f71c6d27806b843271b4d20260ea0edc1fdeaa6b7b0c6e",
+      "git_blob": "86776e0acc76a1179ab41a59ba38c08e42b68d28"
+    },
+    {
+      "path": "tests/apple-api.test.mjs",
+      "bytes": 4061,
+      "sha256": "87ddeaea7d25c14f277444b1208f259f18475ef32b9de8afef1d00ce264b8574",
+      "git_blob": "5434d395bbf084617cf14d5ec0f1cd0a895924f0"
+    },
+    {
+      "path": "tests/apple-auth.test.mjs",
+      "bytes": 1547,
+      "sha256": "ad6197494457a63af4121d231de4a9247d2846778cd184e0f951b1cd20671b31",
+      "git_blob": "c02738a356a8e6f9c4d0b141f8deaa2455afaf00"
+    },
+    {
+      "path": "tests/async-api.test.mjs",
+      "bytes": 1548,
+      "sha256": "9b99e9539388b2f7ee8e4c4b9ac52f3a4575b2ead5af758631a03d46c50c2346",
+      "git_blob": "045b0a73d36aa0674531254444ceee9f354fb176"
+    },
+    {
+      "path": "tests/ci-build.test.mjs",
+      "bytes": 1019,
+      "sha256": "8dcc2982d310e0ac16e32273d3a3029cffab9d7b9d424443cb723701395ab72d",
+      "git_blob": "799a4efe7817bc2ea118d39a306b0f44185ae2db"
+    },
+    {
+      "path": "tests/cloud-contract.test.mjs",
+      "bytes": 11984,
+      "sha256": "3349aa88616a6f8131254e9bad9f48608fd86e35b133acf235eae51ad116fe38",
+      "git_blob": "c6059b8133bb8e45e8419866b03b476b13f6c518"
+    },
+    {
+      "path": "tests/cloud-routing.test.mjs",
+      "bytes": 356,
+      "sha256": "80f00ad1f79a1869943fa3c760039b5cf1365445b731bd4126ef0c00e3a6fa3f",
+      "git_blob": "4ab73109a1a920d4de9004dacf1998c05318951d"
+    },
+    {
+      "path": "tests/cloud-store.test.mjs",
+      "bytes": 2060,
+      "sha256": "dbead161317b17cd6fd33bf07878c7c403a7efe89fdb3e5195bdaad2cdf5c2c9",
+      "git_blob": "74b0fcbd0f071159df37e623582ad75b5bbbda92"
+    },
+    {
+      "path": "tests/contact-names.test.mjs",
+      "bytes": 1135,
+      "sha256": "f5ceecc878bb19a2a2e71079119ad13d81b1479b0d936730cbacbc02c8701b70",
+      "git_blob": "d1e6786395fdbb5a9343ae2945a83b181151c76b"
+    },
+    {
+      "path": "tests/content-review.test.mjs",
+      "bytes": 3457,
+      "sha256": "98382ba7b07d8c9d8e582bc13c88193c28a84272f22228836a8219d7a1e76340",
+      "git_blob": "c94b58ecb2f511f676de98c80d0b27c93cc21365"
+    },
+    {
+      "path": "tests/demo-store.test.mjs",
+      "bytes": 1643,
+      "sha256": "3e254476a764c998c9c44fc4d1277de6a5b53b5facff7045666027c207482e72",
+      "git_blob": "4550673d43ddecf5012133de41fe81827b1001cd"
+    },
+    {
+      "path": "tests/domain.test.mjs",
+      "bytes": 2131,
+      "sha256": "e625a68fbff8ebf852c447919cdc149d4852bcdb631cf283408505a1949e89aa",
+      "git_blob": "d9205899d48f68325c335f1a54e37f7f23e11fc9"
+    },
+    {
+      "path": "tests/helpers.mjs",
+      "bytes": 430,
+      "sha256": "d78ed959602e30ba5917f837cf8a8a1f61574d9c53758b0511cff0fc6fed6902",
+      "git_blob": "a344d0514c06a0476cd22c35336a5d8cb7fcb373"
+    },
+    {
+      "path": "tests/hosting.test.mjs",
+      "bytes": 1071,
+      "sha256": "b9d538e2a9538bb26a11c8c6e587b5a2a59eab573a735c37f2fc60a68ba09132",
+      "git_blob": "77b5b389c8138cc62aa13601dfef81bd3b0a6927"
+    },
+    {
+      "path": "tests/interests.test.mjs",
+      "bytes": 1500,
+      "sha256": "cfb606135674441d5ccc89a9745991d62808b0ca834ea6f208875378d65ccde0",
+      "git_blob": "02b6416896e61ac4a6cf109f647f3ca9a55cdcf5"
+    },
+    {
+      "path": "tests/invitation-attempt.test.mjs",
+      "bytes": 3678,
+      "sha256": "5cd952842568ca681203fc508ee2de0900f8013b72a9d644c5895502df8ce09a",
+      "git_blob": "3b044e9d7804f84252b9c223e00fa628c3355e7e"
+    },
+    {
+      "path": "tests/invitations.test.mjs",
+      "bytes": 2248,
+      "sha256": "247e9c5504b52a36a38fe29c7e2bff540548bb3c6cb5706928708da9ee0075e2",
+      "git_blob": "a4cd52c0d053d95173097b4794c58be34e1dd52f"
+    },
+    {
+      "path": "tests/profile-sync.test.mjs",
+      "bytes": 2977,
+      "sha256": "bcd37cde078c0d5179ca16a46b59eef3a3f211086d9d1f5c7c4e5392e6eb2a27",
+      "git_blob": "0c06329e407ca2544c7369aad54c26f2c1cac1f5"
+    },
+    {
+      "path": "tests/runtime-package.test.mjs",
+      "bytes": 2461,
+      "sha256": "8585fa364135e90ecbe2301b025e031402590a54b507718c71aed299be4777a5",
+      "git_blob": "4ce66e5bfe6c1e3739400bed1436debf204632da"
+    },
+    {
+      "path": "tests/runtime.test.mjs",
+      "bytes": 4472,
+      "sha256": "a1fdf2eb36d0210c361f8db9e857f9287e2c4ade758cd9f7d9e1b06dcc3542f2",
+      "git_blob": "abea7bbd6ac43909afcda4d454d2852eb389a30d"
+    },
+    {
+      "path": "tests/store-build.test.mjs",
+      "bytes": 921,
+      "sha256": "9d04fe8a5e372a41202d2cd3ecda39e36288b6690e00137f72952d65affcbfb0",
+      "git_blob": "364cb8cca66f4200b9ea7b9d4690a612e0ae1832"
+    },
+    {
+      "path": "tests/store.test.mjs",
+      "bytes": 9737,
+      "sha256": "e28fe5556c1fd22dcc6825d0498657d6c3c4bf64fcc99575d3439a0f8a50b7f1",
+      "git_blob": "749f36657095f2169f9e7d518659d1da07026872"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 193,
+      "sha256": "77d407ef2a6bace3038da2f7290d38da9b24d467255f4463590dc761b3993801",
+      "git_blob": "a042f3e69b38d91b864f69d2e16d9ab897b14277"
+    }
+  ],
+  "verification": {
+    "commit": "b56c57d19a50bc7b56f3964a6343f73449817fc0",
+    "files": 144,
+    "matched": 144,
+    "mismatches": [],
+    "remoteFiles": 144,
+    "truncated": false
+  },
+  "tests": {
+    "pass": 114,
+    "fail": 0,
+    "typecheck_exit": 0
+  }
+}
