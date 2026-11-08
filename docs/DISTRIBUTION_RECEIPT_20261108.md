@@ -14,3 +14,10 @@ App Store Connect 6832108281 mostra ancora No Builds all'ultima lettura; non att
 Sei Secrets iOS configurati su GitHub; ENABLE_NATIVE_CI=true. Credenziali solo in Secrets, nessun valore in Git o log. File temporaneo di trasferimento rimosso. Workflow manuale platform=ios, upload_testflight=true.
 I quattro Secrets Android non sono stati configurati in questa sessione: per future compilazioni Android su GitHub devono essere recuperati dal keystore dedicato già esistente, senza cambiarne la chiave di upload.
 Entrambe le versioni distribuite sono DEMO con dati fittizi, senza GPS, login social o inviti reali. Le verifiche della pipeline non sostituiscono un collaudo fisico su telefoni.
+
+
+## Replacement build12001 — startup regression
+- Source15cf2dbfced20f20468f1a7d40bdda25380aea1a; signed GitHub run42438255269 SUCCESS.
+- IPA verified:it.randomstranger.app,0.1.0,12001; SHA256d36d8a57b827e26a3a955e604a5f1910cefe3648df2df78c315aec2fdda39704.
+- Apple authenticated Build Uploads:0.1.0(12001),Processing,Apple delivery UUID0b92a48f-5aea-441b-bfc9-a366cfcfb541. This proves received upload; it is not yet proof of a selectable TestFlight build or installability.
+- Simulator Release startup regression passed on identical source:run42436848726. Screenshot:docs/screenshots/ios-startup-pass-20261108.jpg. Device retest pending.
