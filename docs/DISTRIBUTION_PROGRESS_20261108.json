@@ -9,8 +9,20 @@
     "source_commit": "aa708f051776b45e46f099be2bb5fbfcdcabd547",
     "platform": "ios",
     "upload_testflight": true,
-    "status": "in_progress",
-    "testflight_available": false
+    "status": "success",
+    "testflight_available": false,
+    "build_number": "10001",
+    "version": "0.1.0",
+    "archive": "success",
+    "ipa_export": "success",
+    "testflight_upload": "success",
+    "upload_completed_at_utc": "2026-11-08T00:54:17Z",
+    "apple_upload_log": "UPLOAD SUCCEEDED with no errors",
+    "apple_console_last_observed": "No Builds; tester availability not yet confirmed",
+    "artifact_id": 13597439199,
+    "artifact_sha256": "809b921b6a56f811a2ec1869200c66883c8879a4ab5dbfbb89d6950754464042",
+    "ipa_sha256": "d4c40e02b9427fbd911ca5c35278e5480f2e293f32897798301143384eeeb003",
+    "ipa_library_file_id": "libfile_556fae940f248191ba7fd09af1248417"
   },
   "android": {
     "play_app_id": "4973696627498088796",
@@ -22,7 +34,9 @@
     "status": "released_to_internal_testing",
     "testers_configured": false,
     "public_production": false,
-    "aab_sha256": "941f58264b9ff64e7f363b1311087676a2eb8db882d4d037704d608d80dfa5bd"
+    "aab_sha256": "941f58264b9ff64e7f363b1311087676a2eb8db882d4d037704d608d80dfa5bd",
+    "release_url": "https://play.google.com/console/u/0/developers/6105511819354024440/app/4973696627498088796/tracks/4701512455309823023?tab=releases",
+    "warning": "No testers configured; configure selected recipients before installation."
   },
   "credentials": {
     "stored": "GitHub Actions Secrets only; no plaintext in source or logs",
