@@ -9,20 +9,27 @@
     "source_commit": "7e829fa76764aae103abe435ea97386f591331ca",
     "platform": "ios",
     "upload_testflight": true,
-    "status": "in_progress",
+    "status": "success",
     "testflight_available": false,
     "build_number": "11001",
     "version": "0.1.0",
-    "archive": "pending",
-    "ipa_export": "pending",
-    "testflight_upload": "pending",
-    "apple_console_last_observed": "Previous build 10001 rejected ITMS-90683; corrected build 11001 running",
+    "archive": "success",
+    "ipa_export": "success",
+    "testflight_upload": "success",
+    "apple_console_last_observed": "Build 11001 present; Complete upload; Ready to Submit; no group or testers",
     "previous_build": {
       "build_number": "10001",
       "status": "apple_rejected",
       "error": "ITMS-90683",
       "missing_key": "NSContactsUsageDescription"
-    }
+    },
+    "upload_completed_at_utc": "2026-11-08T01:15:50Z",
+    "delivery_uuid": "15b0e8a2-fa32-42a3-b082-a026125ff7aa",
+    "apple_upload_status": "Complete",
+    "apple_build_status": "Ready to Submit",
+    "testflight_present": true,
+    "testers_configured": false,
+    "testflight_url": "https://appstoreconnect.apple.com/teams/8f57d241-76f9-4226-a912-f2ef24ac1a92/apps/6832108281/testflight/ios"
   },
   "android": {
     "play_app_id": "4973696627498088796",
