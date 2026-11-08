@@ -56,6 +56,7 @@
   },
   "overrides": {
     "react-native": "$react-native",
-    "expo-modules-core": "58.0.11"
+    "expo-modules-core": "58.0.11",
+    "expo-modules-jsi": "58.0.7"
   }
 }
