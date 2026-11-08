@@ -1,0 +1,15 @@
+{
+  "mode": "demo",
+  "checkedAt": "2026-11-07T23:23:46.749Z",
+  "androidPrebuild": "passed",
+  "iosPrebuild": "passed",
+  "appleEntitlement": "not-requested",
+  "unneededPermissions": "removed",
+  "contactAccess": "not-requested",
+  "nativeCompilation": "not-run",
+  "signedBinaries": false,
+  "deviceTests": "not-run",
+  "notes": [
+    "expo-system-ui non installato: la palette dell’app è applicata direttamente dai componenti."
+  ]
+}

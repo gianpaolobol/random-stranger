@@ -1,0 +1,10 @@
+{
+  "project_id": "appgprj_6aef5151985c8191a32fa8dcaa663786",
+  "deployment_id": "appgdep_6aef56a4e1e4819184ef40a85034f89d",
+  "version_id": "appgprj_6aef5151985c8191a32fa8dcaa663786~appgver_3eeaf403efd88191a8404071104dbfcb",
+  "commit_sha": "b7bca29ee614f1d11703a01b54e76f9e93561d89",
+  "url": "https://random-stranger.gianpaolo-franceschi.chatgpt.site",
+  "status": "succeeded",
+  "updated_at": "2026-11-07T16:50:00.598491+00:00",
+  "scope": "private static demo; native exports only; production API/OAuth not configured"
+}
