@@ -1,4 +1,7 @@
 # Random Stranger
+
+> **Copyright © 2026 Gian Paolo Franceschini — All rights reserved for original proprietary contributions.** See [LICENSE.md](LICENSE.md). Third-party licenses and GitHub's permitted platform uses remain applicable.
+
 App Expo per iOS, Android e web: profili solo testuali senza nickname permanente, alias nuovi per ogni incontro, disponibilità, preferenze reciproche e incontri in luoghi pubblici. Identità visiva approvata: azzurro/fucsia su blu notte, stella nella o e simbolo alato.
 
 ## Stato reale
